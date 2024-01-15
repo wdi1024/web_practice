@@ -1,0 +1,29 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thread>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thread>
+    <tbody>
+    {{#article}}
+        <tr>
+            <th>{{id}}</th>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<!-- 삭제 링크 추가 -->
+<a href="/articles/{{article.id}}/delete" class="btn btn-dange">Delete</a>
+<a href="/articles">Go to Article List</a>
+
+{{>comments/_comments}}
+
+{{>layouts/footer}}
